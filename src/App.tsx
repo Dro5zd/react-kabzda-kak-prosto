@@ -5,7 +5,6 @@ import {Rating} from "./components/Rating/Rating";
 import {OnOff} from "./components/OnOff/OnOff";
 
 function App() {
-    console.log("App rendering")
     return (
         <div>
             {/*<PageTitle title={'This is APP component'}/>*/}
@@ -16,14 +15,14 @@ function App() {
             {/*<Rating value={2}/>*/}
             {/*<Rating value={3}/>*/}
             {/*<Rating value={4}/>*/}
-            {/*<Accordion titleValue={'Menu'} collapsed={true}/>*/}
-            {/*<Accordion titleValue={'Users List'} collapsed={false}/>*/}
+            <Accordion />
+            {/*<Accordion />*/}
             {/*Article 2*/}
             {/*<Rating value={3}/>*/}
 
-            <OnOff />
-            <OnOff />
-            <OnOff />
+            {/*<OnOff />*/}
+            {/*<OnOff />*/}
+            {/*<OnOff />*/}
         </div>
     )
 }

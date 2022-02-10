@@ -1,20 +1,17 @@
 import React, {useState} from 'react';
 
+export const OnOff = () => {
 
-type OnOffPropsType = {
-    // on: boolean
-}
+   let [on, setOn] = useState(false)
 
+    let onClickButtonHandlerOn = () =>{
+       setOn(true)
+    }
 
+    let onClickButtonHandlerOff = () =>{
+        setOn(false)
+    }
 
-
-export const OnOff = (props: OnOffPropsType) => {
-
-    let [on, setOn] = useState(false)
-
-const clickOnButton = ()=> {
-        setOn(true ? onStyle  : offStyle)
-}
 
     const onStyle = {
         height: '60px',
@@ -44,9 +41,9 @@ const clickOnButton = ()=> {
 
     return (
         <div>
-            <div style={onStyle} onClick={()=>{setOn(true)}}>On</div>
-            <div style={offStyle} onClick={()=>{setOn(false)}}>Off</div>
-            <div style={indicatorStyle}></div>
+            <div style={onStyle} onClick={onClickButtonHandlerOn}>On</div>
+            <div style={offStyle} onClick={onClickButtonHandlerOff}>Off</div>
+            <div style={indicatorStyle}>00</div>
         </div>
     );
 };
