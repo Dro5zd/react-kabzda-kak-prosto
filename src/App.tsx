@@ -4,7 +4,8 @@ import {Rating} from "./components/Rating/Rating";
 import {OnOff} from "./components/OnOff/OnOff";
 import {UncontrolledAccordion} from "./components/Accordion/UncontrolledAccordion";
 import {Accordion} from "./components/Accordion/Accordion";
-import {UnconrolledRating} from "./components/Rating/UnconrolledRating";
+import {UncontrolledRating} from "./components/Rating/UnconrolledRating";
+
 
 function App() {
     return (
@@ -20,7 +21,7 @@ function App() {
             <Accordion titleValue={'Menu'} collapsed={false}/>
             <UncontrolledAccordion />
             Article 2
-            {/*<UnconrolledRating/>*/}
+            <UncontrolledRating/>
 
             <OnOff />
             <OnOff />
