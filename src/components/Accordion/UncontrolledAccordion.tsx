@@ -1,12 +1,12 @@
-import React, {useState} from "react";
+import React, {useState} from 'react';
 
 export function UncontrolledAccordion() {
 
-    let[col, setCol] = useState(false)
-     const collapsed = () =>{
+    let [col, setCol] = useState(false)
+    const collapsed = () => {
         setCol(!col)
-}
-    if(col){
+    }
+    if (col) {
         return (
             <div>
                 <AccordionTitle collapsed={collapsed}/>
@@ -23,16 +23,15 @@ export function UncontrolledAccordion() {
 }
 
 type AccordionTitleProps = {
-    collapsed: (col: boolean)=>void
+    collapsed: (col: boolean) => void
 }
 
-function AccordionTitle(props: AccordionTitleProps ) {
-    const onclickColButtonHandler = () =>{
+function AccordionTitle(props: AccordionTitleProps) {
+    const onclickColButtonHandler = () => {
         props.collapsed(true)
     }
     return <div>
-        <h3>MENU</h3>
-        <button onClick={onclickColButtonHandler}>TOGGLE</button>
+        <h3 onClick={onclickColButtonHandler}>MENU</h3>
     </div>
 
 }

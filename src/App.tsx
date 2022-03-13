@@ -7,7 +7,6 @@ import {Accordion} from './components/Accordion/Accordion';
 import {UncontrolledRating, ValuePropsTYpe} from './components/Rating/UnconrolledRating';
 
 
-
 function App() {
     const [value, setValue] = useState<ValuePropsTYpe>(0)
 
@@ -20,11 +19,12 @@ function App() {
             <Rating value={value} onClick={setValue}/>
 
             {/*<Accordion titleValue={'Menu'} collapsed={false}/>*/}
-            {/*<UncontrolledAccordion />*/}
+
             <hr/>
 
             <UncontrolledRating/>
 
+            <UncontrolledAccordion />
             {/*<OnOff />*/}
             {/*<OnOff />*/}
             {/*<OnOff />*/}
