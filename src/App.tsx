@@ -1,10 +1,11 @@
 import React, {useState} from 'react';
 import './App.css';
 import {Rating} from './components/Rating/Rating';
-import {OnOff} from './components/OnOff/OnOff';
 import {UncontrolledAccordion} from './components/Accordion/UncontrolledAccordion';
 import Accordion from './components/Accordion/Accordion';
 import {UncontrolledRating, ValuePropsTYpe} from './components/Rating/UnconrolledRating';
+import {UncontrolledOnOff} from './components/OnOff/UncontrolledOnOff';
+import {OnOff} from './components/OnOff/OnOff';
 
 
 function App() {
@@ -16,17 +17,14 @@ function App() {
             {/*<PageTitle title={'This is APP component'}/>*/}
             {/*<PageTitle title={'My Friends'}/>*/}
             <hr/>
-
             <Rating value={value} onClick={setValue}/>
             <Accordion titleValue={'Menu'} collapsed={accordionCollapsed} callback={(collapsed)=>{setAccordionCollapsed(!collapsed)}}/>
+            <OnOff />
 
             <hr/>
-
             <UncontrolledRating/>
             <UncontrolledAccordion />
-            {/*<OnOff />*/}
-            {/*<OnOff />*/}
-            {/*<OnOff />*/}
+            <UncontrolledOnOff />
         </div>
     )
 }
