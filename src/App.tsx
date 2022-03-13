@@ -3,12 +3,13 @@ import './App.css';
 import {Rating} from './components/Rating/Rating';
 import {OnOff} from './components/OnOff/OnOff';
 import {UncontrolledAccordion} from './components/Accordion/UncontrolledAccordion';
-import {Accordion} from './components/Accordion/Accordion';
+import Accordion from './components/Accordion/Accordion';
 import {UncontrolledRating, ValuePropsTYpe} from './components/Rating/UnconrolledRating';
 
 
 function App() {
     const [value, setValue] = useState<ValuePropsTYpe>(0)
+    const [accordionCollapsed, setAccordionCollapsed] = useState<boolean>(true)
 
     return (
         <div>
@@ -17,13 +18,11 @@ function App() {
             <hr/>
 
             <Rating value={value} onClick={setValue}/>
-
-            {/*<Accordion titleValue={'Menu'} collapsed={false}/>*/}
+            <Accordion titleValue={'Menu'} collapsed={accordionCollapsed} callback={(collapsed)=>{setAccordionCollapsed(!collapsed)}}/>
 
             <hr/>
 
             <UncontrolledRating/>
-
             <UncontrolledAccordion />
             {/*<OnOff />*/}
             {/*<OnOff />*/}

@@ -3,24 +3,28 @@ import React from "react";
 type AccordionPropsType = {
     titleValue: string
     collapsed: boolean
+    callback: (col: boolean)=>void
 }
 
-export function Accordion(props: AccordionPropsType) {
+function Accordion(props: AccordionPropsType) {
 
     return (
         <div>
-            <AccordionTitle title={props.titleValue}/>
+            <AccordionTitle title={props.titleValue} collapsed={props.collapsed}
+            callback={props.callback}/>
             { !props.collapsed &&  <AccordionBody/>}
         </div>
     )
 
     type AccordionTitleProps = {
         title: string
+        collapsed: boolean
+        callback: (col: boolean)=>void
     }
 
     function AccordionTitle(props: AccordionTitleProps) {
         return <div>
-            <h3>{props.title}</h3>
+            <h3 onClick={()=>{props.callback(props.collapsed)}}>{props.title}</h3>
         </div>
 
     }
@@ -35,3 +39,5 @@ export function Accordion(props: AccordionPropsType) {
         )
     }
 }
+
+export default Accordion
