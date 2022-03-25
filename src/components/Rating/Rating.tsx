@@ -3,13 +3,13 @@ import StarIcon from '@mui/icons-material/Star';
 import StarBorderIcon from '@mui/icons-material/StarBorder';
 import {ValuePropsTYpe} from './UnconrolledRating';
 
-type StarPropsType = {
+export type StarPropsType = {
     selected: boolean
     callback: (value: ValuePropsTYpe) => void
     value: ValuePropsTYpe
 }
 
-type RatingPropsType = {
+export type RatingPropsType = {
     value: ValuePropsTYpe
     onClick: (value: ValuePropsTYpe) => void
 }
@@ -26,7 +26,6 @@ export function Rating(props: RatingPropsType) {
     )
 }
 
-
 function Star(props: StarPropsType) {
     return props.selected ? <StarIcon onClick={() => {
             props.callback(props.value)
@@ -34,5 +33,4 @@ function Star(props: StarPropsType) {
         : <StarBorderIcon onClick={() => {
             props.callback(props.value)
         }}/>
-
 }
