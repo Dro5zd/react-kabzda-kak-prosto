@@ -5,7 +5,7 @@ type AccordionPropsType = {
     titleValue: string
 }
 
-export function UncontrolledAccordion(props: AccordionPropsType) {
+ export function UncontrolledAccordion(props: AccordionPropsType) {
 
     let [collapsed, dispatch] = useReducer(reducer, false)
 
