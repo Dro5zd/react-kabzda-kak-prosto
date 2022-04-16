@@ -25,7 +25,7 @@ function App() {
 
             <hr/>
             <UncontrolledRating/>
-            <UncontrolledAccordion />
+            <UncontrolledAccordion titleValue={'Menu'}/>
             <UncontrolledOnOff />
         </div>
     )

@@ -1,53 +1,42 @@
-import React, {useState} from 'react';
+import React, {useReducer} from 'react';
+import {reducer} from './reducer';
 
-
-const accordionReducer = (state, action) => {
-
-    return state
+type AccordionPropsType = {
+    titleValue: string
 }
 
-export function UncontrolledAccordion() {
+export function UncontrolledAccordion(props: AccordionPropsType) {
 
-    let [col, setCol] = useState(false)
-    const collapsed = () => {
-        setCol(!col)
-    }
-    if (col) {
-        return (
-            <div>
-                <AccordionTitle collapsed={collapsed}/>
-                <AccordionBody/>
-            </div>
-        )
-    } else {
-        return (
-            <div>
-                <AccordionTitle collapsed={collapsed}/>
-            </div>
-        )
-    }
-}
+    let [collapsed, dispatch] = useReducer(reducer, false)
 
-type AccordionTitleProps = {
-    collapsed: (col: boolean) => void
-}
-
-function AccordionTitle(props: AccordionTitleProps) {
-    const onclickColButtonHandler = () => {
-        props.collapsed(true)
-    }
     return <div>
-        <h3 onClick={onclickColButtonHandler}>MENU</h3>
+        <AccordionTitle title={props.titleValue} onClick={() => {
+            dispatch({type: 'TOGGLE-COLLAPSED'})
+        }}/>
+            {!collapsed && <AccordionBody/>}
     </div>
-
 }
 
-function AccordionBody() {
-    return (
-        <ul>
-            <li>1</li>
-            <li>2</li>
-            <li>3</li>
-        </ul>
-    )
+type AccordionTitlePropsType ={
+    title:string
+    onClick: ()=> void
 }
+
+
+function AccordionTitle(props: AccordionTitlePropsType)
+    {
+        return <div>
+            <h3 onClick={()=>{props.onClick()}}>---{props.title}---</h3>
+        </div>
+    }
+
+function AccordionBody()
+    {
+        return (
+            <ul>
+                <li>1</li>
+                <li>2</li>
+                <li>3</li>
+            </ul>
+        )
+    }
