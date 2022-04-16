@@ -1,5 +1,11 @@
 import React, {useState} from 'react';
 
+
+const accordionReducer = (state, action) => {
+
+    return state
+}
+
 export function UncontrolledAccordion() {
 
     let [col, setCol] = useState(false)
