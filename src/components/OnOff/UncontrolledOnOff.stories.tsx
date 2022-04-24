@@ -7,6 +7,6 @@ export default {
     component: UncontrolledOnOff,
 };
 
-export const UncontrolledOnMode = () => <UncontrolledOnOff />
+export const UncontrolledOnMode = () => <UncontrolledOnOff/>
 
 

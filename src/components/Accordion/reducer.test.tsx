@@ -10,11 +10,11 @@ test('reducer should be true', () => {
 
     // expectation
 
-expect(newState.collapsed).toBe(true)
+    expect(newState.collapsed).toBe(true)
 })
 
-test('reducer should be false', ()=>{
-    const state:StateType = {
+test('reducer should be false', () => {
+    const state: StateType = {
         collapsed: true
     }
 

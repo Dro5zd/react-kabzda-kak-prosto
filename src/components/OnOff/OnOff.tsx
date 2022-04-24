@@ -2,7 +2,7 @@ import React from 'react';
 
 type OnOffType = {
     on: boolean
-    callback: (on: boolean)=>void
+    callback: (on: boolean) => void
 }
 
 export const OnOff = (props: OnOffType) => {
