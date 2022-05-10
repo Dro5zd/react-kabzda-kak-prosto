@@ -1,18 +1,21 @@
 import React, {useEffect, useState} from 'react';
 
+type PropsType = {
+    mode?: 'analog' | 'digital'
 
-type PropsType = {}
+}
 
 export const Clock: React.FC<PropsType> = (props) => {
 
-const [date, setDate] = useState(new Date())
 
-    useEffect( ()=> {
-        const intervalID = setInterval(()=>{
+    const [date, setDate] = useState(new Date())
+
+    useEffect(() => {
+        const intervalID = setInterval(() => {
             setDate(new Date())
         }, 1000)
 
-        return ()=> {
+        return () => {
             clearInterval(intervalID)
         }
     }, [])
